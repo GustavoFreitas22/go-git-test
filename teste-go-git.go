@@ -1,13 +1,11 @@
 package main
 
 import (
-	"strings"
-
 	"github.com/go-git/go-git/v5"
 )
 
 func main() {
-	getStatus("./")
+	getStatus("./path")
 }
 
 func getStatus(path string) (string, error) {
@@ -31,9 +29,7 @@ func getStatus(path string) (string, error) {
 		return err.Error(), err
 	}
 
-	arrayStatus := strings.Split(status.String(), "\n")
-
-	println(arrayStatus)
+	println(status.String())
 
 	return "Finalized!", nil
 }
