@@ -1,11 +1,17 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/go-git/go-git/v5"
 )
 
 func main() {
-	getStatus("./path")
+	msg, err := getStatus("../pathTest")
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(msg)
 }
 
 func getStatus(path string) (string, error) {
